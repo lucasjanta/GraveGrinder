@@ -78,6 +78,10 @@ jump={
 2d_physics/layer_10="RampDown"
 2d_physics/layer_11="RampUp"
 
+[physics]
+
+common/physics_interpolation=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5wt0ddfvqfnb"]
+
+[ext_resource type="Texture2D" uid="uid://cj6mv1c5mk2vp" path="res://Props/tumbas.png" id="1_hk0uq"]
+[ext_resource type="Script" path="res://Props/tombstone/tombstone.gd" id="1_mnlhm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5a4j"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_javnn"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6ppf"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cehxn"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy5lb"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13dep"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38l10"]
+atlas = ExtResource("1_hk0uq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwt7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5a4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_javnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6ppf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cehxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy5lb")
+}],
+"loop": false,
+"name": &"break",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13dep")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38l10")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68chq"]
+size = Vector2(26, 27)
+
+[node name="tombstone" type="Area2D"]
+collision_layer = 257
+collision_mask = 2
+script = ExtResource("1_mnlhm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qwt7h")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_68chq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://daii2lpdaqqe"]
+
+[ext_resource type="Texture2D" uid="uid://dj7enmdy46tki" path="res://Props/portal/portal.png" id="1_2xrpj"]
+[ext_resource type="Script" path="res://Props/portal/portal.gd" id="1_h2kq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1xoh"]
+size = Vector2(56, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jewhh"]
+atlas = ExtResource("1_2xrpj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u4op"]
+atlas = ExtResource("1_2xrpj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibm3n"]
+atlas = ExtResource("1_2xrpj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yuxh"]
+atlas = ExtResource("1_2xrpj")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfocc"]
+atlas = ExtResource("1_2xrpj")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wlj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jewhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u4op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yuxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfocc")
+}],
+"loop": true,
+"name": &"portal",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imh77"]
+size = Vector2(30, 46)
+
+[node name="portal" type="StaticBody2D"]
+collision_layer = 0
+script = ExtResource("1_h2kq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_b1xoh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_8wlj8")
+animation = &"portal"
+autoplay = "portal"
+frame = 3
+frame_progress = 0.127163
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/portal",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/portal/portal.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a214b173307ed795135b73479e7625a0"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_imh77")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

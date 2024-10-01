@@ -1,0 +1,215 @@
+[gd_scene load_steps=9 format=3 uid="uid://blcau3ayn0t3o"]
+
+[ext_resource type="Texture2D" uid="uid://bjcg22p7b8yrr" path="res://Props/grindtomb/grindtomb.png" id="1_v5u0q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp06j"]
+atlas = ExtResource("1_v5u0q")
+region = Rect2(0, 0, 50, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d3qx"]
+atlas = ExtResource("1_v5u0q")
+region = Rect2(50, 0, 50, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcuar"]
+atlas = ExtResource("1_v5u0q")
+region = Rect2(0, 70, 50, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k71id"]
+atlas = ExtResource("1_v5u0q")
+region = Rect2(50, 70, 50, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kc2oa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp06j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d3qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcuar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k71id")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_205dv"]
+size = Vector2(399, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8iqr"]
+size = Vector2(399, 7)
+
+[node name="grindtomb" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+frame_progress = 0.810963
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(50, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+flip_h = true
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(100, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(150, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(200, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+flip_h = true
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(250, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+flip_h = true
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(300, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(350, 0)
+sprite_frames = SubResource("SpriteFrames_kc2oa")
+animation = &"idle"
+flip_h = true
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/grindtomb",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/grindtomb/grindtomb.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c6e318ba1adab0a9a7b0ca08691dd740"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(174.5, 6.5)
+shape = SubResource("RectangleShape2D_205dv")
+one_way_collision = true
+
+[node name="grindarea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grindarea"]
+position = Vector2(174.5, -1.5)
+shape = SubResource("RectangleShape2D_g8iqr")
+debug_color = Color(0.880508, 0.0174628, 0.816511, 0.42)

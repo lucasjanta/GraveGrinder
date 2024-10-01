@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfe3n5qg62l1"]
+
+[ext_resource type="Texture2D" uid="uid://cj6mv1c5mk2vp" path="res://Props/tumbas.png" id="1_aouhd"]
+[ext_resource type="Script" path="res://Props/tombramp/tombramp.gd" id="1_c6y4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h02qb"]
+size = Vector2(21.3137, 22.0208)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpxt6"]
+size = Vector2(25, 17.4246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8qlt"]
+size = Vector2(4.5, 23)
+
+[node name="tombramp" type="StaticBody2D"]
+script = ExtResource("1_c6y4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.178933, 7.75)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_h02qb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aouhd")
+region_enabled = true
+region_rect = Rect2(31.1879, 80.0116, 32.3085, 16.1613)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, -5.7123)
+shape = SubResource("RectangleShape2D_dpxt6")
+debug_color = Color(0.369631, 0.477887, 1, 0.42)
+
+[node name="up_logic" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up_logic"]
+position = Vector2(-8.25, -3.5)
+shape = SubResource("RectangleShape2D_l8qlt")
+debug_color = Color(2.45467e-06, 0.640241, 0.352872, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="up_logic" to="." method="_on_up_logic_body_entered"]
+[connection signal="body_exited" from="up_logic" to="." method="_on_up_logic_body_exited"]

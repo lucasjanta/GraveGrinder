@@ -1,0 +1,134 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcif2oega6tu8"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_ytn0b"]
+[ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="2_mef47"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkl45"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ax3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ocn4"]
+bg_color = Color(0.628935, 0.75411, 0.729109, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k7vv"]
+bg_color = Color(0.408262, 0.536548, 0.513466, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aankl"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ytn0b")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rkl45")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -31.0
+offset_right = 53.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mef47")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+text = "Start Game"
+
+[node name="Tutorial" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mef47")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+text = "Tutorial"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mef47")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mef47")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 23.0
+offset_right = 62.5
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mef47")
+theme_override_font_sizes/font_size = 24
+text = "SpookySkater"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi3sw7hq1py4r"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/level_results.gd" id="1_7epgg"]
+[ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="1_w0tvd"]
+[ext_resource type="Texture2D" uid="uid://b7rq82cw61dva" path="res://UI/icons/zombies_killed.png" id="3_1fnxw"]
+[ext_resource type="Texture2D" uid="uid://p2ac1mlmg0yv" path="res://UI/icons/tombs_destroyed.png" id="4_k83ix"]
+[ext_resource type="Texture2D" uid="uid://dirb2qqkfykcg" path="res://UI/icons/grindtime.png" id="5_kne7m"]
+
+[node name="LevelResults" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7epgg")
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -52.0
+offset_right = 130.0
+offset_bottom = 52.0
+grow_vertical = 2
+
+[node name="grade" type="Label" parent="Container"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_w0tvd")
+theme_override_font_sizes/font_size = 80
+text = "SS"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="rank_title" type="Label" parent="."]
+layout_mode = 2
+offset_left = 26.0
+offset_top = 38.0
+offset_right = 130.0
+offset_bottom = 61.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_w0tvd")
+theme_override_font_sizes/font_size = 14
+text = "RANK"
+horizontal_alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -68.0
+offset_right = 136.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="level_name" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "1. Old Man's Wish"
+horizontal_alignment = 1
+
+[node name="time" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "TIME: 02:25:150"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "SCORE: 12579"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Stats/HBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_1fnxw")
+expand_mode = 2
+
+[node name="zombies_killed" type="Label" parent="Stats/HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "57"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="Stats/HBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_k83ix")
+expand_mode = 2
+
+[node name="tombs_destroyed" type="Label" parent="Stats/HBoxContainer/PanelContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "-8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="Stats/HBoxContainer"]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats/HBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Stats/HBoxContainer/PanelContainer3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_kne7m")
+expand_mode = 2
+
+[node name="grind_time" type="Label" parent="Stats/HBoxContainer/PanelContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "00:58"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Stats/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Retry" type="Button" parent="Stats/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+theme_override_font_sizes/font_size = 14
+text = "RETRY"
+
+[node name="MainMenu" type="Button" parent="Stats/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+theme_override_font_sizes/font_size = 14
+text = "MAIN MENU"
+
+[node name="NextLevel" type="Button" parent="Stats/VBoxContainer"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "NEXT LEVEL"
+
+[connection signal="pressed" from="Stats/VBoxContainer/HBoxContainer2/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Stats/VBoxContainer/HBoxContainer2/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Stats/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

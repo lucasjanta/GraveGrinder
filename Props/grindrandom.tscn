@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3abxp37ufgq1"]
+
+[ext_resource type="Script" path="res://Props/grindtomb/grindrandom.gd" id="1_pt8wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3en35"]
+size = Vector2(50, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crhqb"]
+size = Vector2(50, 6)
+
+[node name="grindrandom" type="StaticBody2D"]
+script = ExtResource("1_pt8wo")
+
+[node name="rigidcollision" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_3en35")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 6.5)
+
+[node name="grindcollision" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_crhqb")
+debug_color = Color(0.845485, 0.00100035, 0.910591, 0.42)

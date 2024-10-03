@@ -2,9 +2,11 @@ extends Control
 
 @onready var animation_player = $AnimationPlayer
 
+@onready var best_score = $"best score"
+
 
 func _ready():
-	pass
+	best_score.text = "Highscore: " + str(int(UI.highscore))
 	#animation_player.play("show_transition")
 
 func _on_retry_pressed():

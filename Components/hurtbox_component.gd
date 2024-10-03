@@ -9,5 +9,3 @@ func _ready():
 func _on_body_entered(hitbox : HitBox) -> void:
 	if owner.has_method("take_hit"):
 		owner.take_hit(hitbox.slow_amount, hitbox)
-	if owner.has_method("zombie_contact"):
-		owner.zombie_contact()

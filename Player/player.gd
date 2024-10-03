@@ -2,7 +2,6 @@ class_name Player extends CharacterBody2D
 
 @export var gravity : float = 750
 @export var friction : float = 10.0
-
 @export var acceleration : float = 75.0
 @export var stamina_regen : float = 20
 
@@ -11,9 +10,11 @@ class_name Player extends CharacterBody2D
 @onready var stopwatch = $Stopwatch
 
 const MAX_SPEED : float = 400.0
+var player_camera : Camera2D
 var jump_force : float = -250
 var max_stamina : float = 100
 var stamina : float = max_stamina
+var is_cam_shaking : bool = false
 var game_over : bool = false
 
 #variáveis do hud
@@ -30,6 +31,8 @@ var game_over : bool = false
 
 
 func _ready():
+	player_camera = get_tree().get_first_node_in_group("Camera")
+	print(player_camera)
 	UI.player = self
 	UI.tombstones_destroyed = 0
 	UI.zombies_killed = 0
@@ -46,18 +49,19 @@ func _physics_process(delta):
 	#Adiciona gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
 	#Adiciona fricção
 	if is_on_floor():
 		if velocity.x != 0:
 			velocity.x = move_toward(velocity.x, 0, delta * friction)
-			
 	move_and_slide()
 
 func take_hit(slow_amount, _body) -> void:
 	if velocity.x < 200:
 		game_over = true
-	
-	
+	if velocity.x > 200:
+		velocity.x -= slow_amount
+		CameraHandle.shake_camera(player_camera, 0.3, 3)
 
 func handle_stopwatch():
 	stopwatch_label.text = stopwatch.time_to_string()
@@ -99,3 +103,12 @@ func show_status(status):
 	status_pop.text = status
 	status_pop_anim.play("status_pop")
 	
+#func shake_camera(camera, duration, intensity, delta):
+	#if is_cam_shaking:
+		#if duration > 0:
+			#print("funcionano")
+			#duration -= delta
+			#var shake_amt = Vector2(randf_range(-1, 1), randf_range(-1, 1)) * intensity
+			#camera.global_position += shake_amt
+		#else:
+			#is_cam_shaking = false

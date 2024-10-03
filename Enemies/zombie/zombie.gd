@@ -19,9 +19,3 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
-
-func zombie_contact():
-	if player.velocity.x > 200:
-		pushed = true
-		player.velocity.x -= 75
-		print("jogador empurrou andando")

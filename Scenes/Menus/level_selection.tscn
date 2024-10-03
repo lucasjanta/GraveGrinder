@@ -81,9 +81,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_yx341")
 [node name="best_score" type="Label" parent="."]
 layout_mode = 0
 offset_left = 79.0
-offset_top = 110.0
+offset_top = 125.0
 offset_right = 142.0
-offset_bottom = 123.0
+offset_bottom = 138.0
 theme_override_fonts/font = ExtResource("2_o2aef")
 theme_override_font_sizes/font_size = 14
 text = "Score: 1000"
@@ -91,9 +91,9 @@ text = "Score: 1000"
 [node name="best_time" type="Label" parent="."]
 layout_mode = 0
 offset_left = 79.0
-offset_top = 124.0
+offset_top = 110.0
 offset_right = 161.0
-offset_bottom = 137.0
+offset_bottom = 123.0
 theme_override_fonts/font = ExtResource("2_o2aef")
 theme_override_font_sizes/font_size = 14
 text = "Best Time 1:52"

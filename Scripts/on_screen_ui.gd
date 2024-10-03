@@ -58,7 +58,6 @@ func check_score(level):
 			time_in_grind_record = time_in_grind
 			save_file(level)
 			
-
 func start_level(level):
 	if level == 1:
 		get_tree().change_scene_to_file("res://Scenes/Levels/test_room.tscn")

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 UI="*res://Scripts/on_screen_ui.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+CameraHandle="*res://Scripts/camera_handle.gd"
 
 [display]
 
@@ -77,10 +78,6 @@ jump={
 2d_physics/layer_9="Tombstone"
 2d_physics/layer_10="RampDown"
 2d_physics/layer_11="RampUp"
-
-[physics]
-
-common/physics_interpolation=true
 
 [rendering]
 

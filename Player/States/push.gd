@@ -10,7 +10,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 		player.velocity.x = player.MAX_SPEED
 	player.stamina -= 20
 	
-func _physics_process(delta):
+func physics_update(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		finished.emit("Ollie")
 

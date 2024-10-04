@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://ce2a68ciwj3oy"]
+[gd_scene load_steps=18 format=4 uid="uid://ce2a68ciwj3oy"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/test_room.gd" id="1_7bx6j"]
 [ext_resource type="PackedScene" uid="uid://blcau3ayn0t3o" path="res://Props/grindtomb/grindtomb.tscn" id="1_oeola"]
 [ext_resource type="PackedScene" uid="uid://daii2lpdaqqe" path="res://Props/portal/portal.tscn" id="2_l8pxc"]
 [ext_resource type="PackedScene" uid="uid://c5wt0ddfvqfnb" path="res://Props/tombstone/tombstone.tscn" id="3_0j1vi"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://tqg5285m1bmk" path="res://Enemies/zombie/zombie.tscn" id="5_a2wub"]
 [ext_resource type="PackedScene" uid="uid://bqknruc6qvmah" path="res://Player/player.tscn" id="6_5x5h8"]
 [ext_resource type="PackedScene" uid="uid://cfe3n5qg62l1" path="res://Props/tombramp/tombramp.tscn" id="7_0ojsa"]
+[ext_resource type="PackedScene" uid="uid://c14jnyy6ya10h" path="res://Scenes/Menus/pause_menu.tscn" id="7_2hhif"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_7iqtj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_w6tf2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_n321v"]
@@ -1441,6 +1443,7 @@ transition = 0
 ease = 2
 
 [node name="TestRoom" type="Node2D"]
+script = ExtResource("1_7bx6j")
 
 [node name="grindtomb" parent="." instance=ExtResource("1_oeola")]
 position = Vector2(1159, 94)
@@ -1476,6 +1479,8 @@ friction = 40.0
 physics_interpolation_mode = 1
 position = Vector2(266.667, 48)
 zoom = Vector2(0.6, 0.6)
+limit_left = 0
+limit_top = -110
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("7_7iqtj")
@@ -1503,3 +1508,14 @@ position = Vector2(1478, 107)
 [node name="tombramp" parent="." instance=ExtResource("7_0ojsa")]
 position = Vector2(738, 118)
 scale = Vector2(1.25, 1.25)
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_2hhif")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[editable path="PauseMenu"]

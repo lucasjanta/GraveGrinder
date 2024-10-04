@@ -9,6 +9,10 @@ func enter(previous_state_path: String, data := {}) -> void:
 	if player.velocity.x > player.MAX_SPEED:
 		player.velocity.x = player.MAX_SPEED
 	player.stamina -= 20
+	
+func _physics_process(delta):
+	if Input.is_action_just_pressed("jump"):
+		finished.emit("Ollie")
 
 
 func _on_animation_player_animation_finished(anim_name):

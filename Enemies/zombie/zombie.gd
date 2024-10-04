@@ -12,10 +12,8 @@ func _physics_process(_delta):
 		player = UI.player
 	move_and_slide()
 
-
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	on_screen = true
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()

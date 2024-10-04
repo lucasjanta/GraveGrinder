@@ -1,0 +1,154 @@
+[gd_scene load_steps=4 format=3 uid="uid://brp76xq3dewbq"]
+
+[ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="1_chqnp"]
+[ext_resource type="Script" path="res://Scenes/Menus/settings.gd" id="1_tbvlh"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_0ye3n"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbvlh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -90.0
+offset_right = 59.0
+offset_bottom = 89.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Video" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_chqnp")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_0ye3n")
+text = "Video"
+
+[node name="Audio" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_chqnp")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_0ye3n")
+text = "Audio"
+
+[node name="Misc" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_chqnp")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_0ye3n")
+text = "Misc"
+
+[node name="Return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_chqnp")
+text = "Return"
+
+[node name="VideoContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Resolution" type="MenuButton" parent="VideoContainer"]
+layout_mode = 2
+text = "Resolution"
+item_count = 2
+popup/item_0/text = "1920x1080"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_1/text = "1080x720"
+popup/item_1/checkable = 1
+popup/item_1/id = 1
+
+[node name="Screen" type="MenuButton" parent="VideoContainer"]
+layout_mode = 2
+text = "Screen Mode"
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_1/text = "Borderless Window"
+popup/item_1/checkable = 1
+popup/item_1/id = 1
+popup/item_2/text = "Fullscreen"
+popup/item_2/checkable = 1
+popup/item_2/id = 2
+
+[node name="AudioContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_right = 320.0
+offset_bottom = 180.0
+alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="AudioContainer/Master"]
+layout_mode = 2
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="AudioContainer/Master"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Music" type="HBoxContainer" parent="AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="AudioContainer/Music"]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider2" type="HSlider" parent="AudioContainer/Music"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Sound Effects" type="HBoxContainer" parent="AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="AudioContainer/Sound Effects"]
+layout_mode = 2
+text = "Sound FX"
+
+[node name="HSlider3" type="HSlider" parent="AudioContainer/Sound Effects"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MiscContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 181.0
+alignment = 1
+
+[node name="ResetScore" type="Button" parent="MiscContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reset Highscore"
+
+[connection signal="pressed" from="VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Misc" to="." method="_on_misc_pressed"]
+[connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="MiscContainer/ResetScore" to="." method="_on_reset_score_pressed"]

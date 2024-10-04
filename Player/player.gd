@@ -56,11 +56,12 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, delta * friction)
 	move_and_slide()
 
-func take_hit(slow_amount, _body) -> void:
+func take_hit(slow_amount, body) -> void:
 	if velocity.x < 200:
 		game_over = true
 	if velocity.x > 200:
 		velocity.x -= slow_amount
+		body.pushed = true
 		CameraHandle.shake_camera(player_camera, 0.3, 3)
 
 func handle_stopwatch():

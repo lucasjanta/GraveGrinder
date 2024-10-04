@@ -8,4 +8,4 @@ func _ready():
 	
 func _on_body_entered(hitbox : HitBox) -> void:
 	if owner.has_method("take_hit"):
-		owner.take_hit(hitbox.slow_amount, hitbox)
+		owner.take_hit(hitbox.slow_amount, hitbox.get_parent())

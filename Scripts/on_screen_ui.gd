@@ -32,7 +32,7 @@ func load_file(level):
 		recordtime = loaded_level_data.RECORDTIME
 		return true
 	else:
-		print("o arquivo n existe")
+		print("o arquivo não existe")
 		return false
 		
 func create_level_data():
@@ -45,6 +45,19 @@ func create_level_data():
 		"TIMEINGRIND" : time_in_grind
 	}
 	return level_dict
+
+func reset_data(level):
+	# 0 = tudo 1 = nivel 1...
+	#if level == 0:
+		#var file_path = "res://pasta_seu_arquivo/arquivo.txt"
+	if FileAccess.file_exists("user://level" + str(level) + ".dat"):
+		var err = DirAccess.remove_absolute("user://level" + str(level) + ".dat")
+		if err == OK:
+			print("Arquivo apagado com sucesso.")
+		else:
+			print("Erro ao tentar apagar o arquivo.")
+	else:
+		print("Arquivo não encontrado.")
 
 func check_score(level):
 	var file = FileAccess.open("user://level" + str(level) + ".dat", FileAccess.READ)

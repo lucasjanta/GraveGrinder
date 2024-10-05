@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ce2a68ciwj3oy"]
+[gd_scene load_steps=18 format=4 uid="uid://ce2a68ciwj3oy"]
 
 [ext_resource type="PackedScene" uid="uid://blcau3ayn0t3o" path="res://Props/grindtomb/grindtomb.tscn" id="1_oeola"]
 [ext_resource type="PackedScene" uid="uid://daii2lpdaqqe" path="res://Props/portal/portal.tscn" id="2_l8pxc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chhe6dr42q0vp" path="res://Tilesets/Tilesetv3.png" id="4_yuwd1"]
 [ext_resource type="PackedScene" uid="uid://tqg5285m1bmk" path="res://Enemies/zombie/zombie.tscn" id="5_a2wub"]
 [ext_resource type="PackedScene" uid="uid://bqknruc6qvmah" path="res://Player/player.tscn" id="6_5x5h8"]
+[ext_resource type="Script" path="res://Scenes/Levels/camera_handle.gd" id="6_sreyd"]
 [ext_resource type="PackedScene" uid="uid://cfe3n5qg62l1" path="res://Props/tombramp/tombramp.tscn" id="7_0ojsa"]
 [ext_resource type="PackedScene" uid="uid://c14jnyy6ya10h" path="res://Scenes/Menus/pause_menu.tscn" id="7_2hhif"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_7iqtj"]
@@ -1479,6 +1480,7 @@ position = Vector2(266.667, 48)
 zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = -110
+script = ExtResource("6_sreyd")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("7_7iqtj")

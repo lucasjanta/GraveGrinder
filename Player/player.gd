@@ -8,9 +8,10 @@ class_name Player extends CharacterBody2D
 @onready var score = $HUD/Score
 @onready var stopwatch_label = $HUD/StopwatchLabel
 @onready var stopwatch = $Stopwatch
+@onready var camera_2d = $"../Camera2D"
 
 const MAX_SPEED : float = 400.0
-var player_camera : Camera2D
+
 var jump_force : float = -250
 var max_stamina : float = 100
 var stamina : float = max_stamina
@@ -31,8 +32,6 @@ var game_over : bool = false
 
 
 func _ready():
-	player_camera = get_tree().get_first_node_in_group("Camera")
-	print(player_camera)
 	UI.player = self
 	UI.tombstones_destroyed = 0
 	UI.zombies_killed = 0
@@ -62,7 +61,7 @@ func take_hit(slow_amount, body) -> void:
 	if velocity.x > 200:
 		velocity.x -= slow_amount
 		body.pushed = true
-		CameraHandle.shake_camera(player_camera, 0.3, 3)
+		camera_2d.shake_camera(0.3, 3)
 
 func handle_stopwatch():
 	stopwatch_label.text = stopwatch.time_to_string()

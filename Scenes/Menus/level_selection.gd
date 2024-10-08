@@ -27,7 +27,7 @@ func load_level_data():
 		best_time.text = "Best time: None"
 	else:
 		play.disabled = false
-		best_time.text = "Best time: " + str(UI.recordtime)
+		best_time.text = "Best time: " + UI.time_to_string(UI.recordtime)
 		best_score.text = "Score: " + str(int(UI.highscore))
 		
 

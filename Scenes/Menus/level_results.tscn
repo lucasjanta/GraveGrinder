@@ -1,10 +1,65 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi3sw7hq1py4r"]
+[gd_scene load_steps=9 format=3 uid="uid://bi3sw7hq1py4r"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/level_results.gd" id="1_7epgg"]
 [ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="1_w0tvd"]
 [ext_resource type="Texture2D" uid="uid://b7rq82cw61dva" path="res://UI/icons/zombies_killed.png" id="3_1fnxw"]
 [ext_resource type="Texture2D" uid="uid://p2ac1mlmg0yv" path="res://UI/icons/tombs_destroyed.png" id="4_k83ix"]
 [ext_resource type="Texture2D" uid="uid://dirb2qqkfykcg" path="res://UI/icons/grindtime.png" id="5_kne7m"]
+
+[sub_resource type="Animation" id="Animation_hsnuu"]
+resource_name = "show_final_score"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("level_name:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(148, -22), Vector2(148, 22)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"time_anim"
+}, {
+"args": [],
+"method": &"final_points_anim"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mugui"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("level_name:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(148, -22)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ve5n"]
+_data = {
+"RESET": SubResource("Animation_mugui"),
+"show_final_score": SubResource("Animation_hsnuu")
+}
 
 [node name="LevelResults" type="Control"]
 layout_mode = 3
@@ -16,6 +71,10 @@ grow_vertical = 2
 script = ExtResource("1_7epgg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ve5n")
+}
+autoplay = "show_final_score"
 
 [node name="Container" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -50,30 +109,41 @@ theme_override_font_sizes/font_size = 14
 text = "RANK"
 horizontal_alignment = 1
 
-[node name="Stats" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -68.0
-offset_right = 136.0
-offset_bottom = 69.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="level_name" type="Label" parent="Stats"]
+[node name="level_name" type="Label" parent="."]
 layout_mode = 2
+offset_left = 148.0
+offset_top = -22.0
+offset_right = 296.0
+offset_bottom = -4.0
 theme_override_fonts/font = ExtResource("1_w0tvd")
+theme_override_font_sizes/font_size = 20
 text = "1. Old Man's Wish"
 horizontal_alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -43.0
+offset_right = -22.0
+offset_bottom = 64.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="time" type="Label" parent="Stats"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_w0tvd")
 text = "TIME: 02:25:150"
+horizontal_alignment = 1
+
+[node name="score" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_w0tvd")
+text = "SCORE: 12579"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Stats"]
@@ -152,12 +222,6 @@ theme_override_fonts/font = ExtResource("1_w0tvd")
 text = "00:58"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="score" type="Label" parent="Stats"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_w0tvd")
-text = "SCORE: 12579"
-horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stats"]
 layout_mode = 2

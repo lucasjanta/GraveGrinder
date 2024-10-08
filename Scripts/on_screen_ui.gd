@@ -5,7 +5,7 @@ var selected_level : int
 #var finished_level : bool
 
 var score : float = 0
-var speedrun_time : float
+var run_time : float
 var zombies_killed : int
 var tombstones_destroyed : int
 var time_in_grind
@@ -65,7 +65,7 @@ func check_score(level):
 		var loaded_level_data = file.get_var()
 		if score > loaded_level_data.HIGHSCORE:
 			highscore = score
-			recordtime = speedrun_time
+			recordtime = run_time
 			zombies_killed_record = zombies_killed
 			tombstones_destroyed_record = tombstones_destroyed
 			time_in_grind_record = time_in_grind

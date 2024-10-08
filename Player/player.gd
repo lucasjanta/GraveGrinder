@@ -64,8 +64,9 @@ func take_hit(slow_amount, body) -> void:
 		camera_2d.shake_camera(0.3, 3)
 
 func handle_stopwatch():
+	UI.run_time = stopwatch.time
 	stopwatch_label.text = stopwatch.time_to_string()
-	UI.speedrun_time = stopwatch.time
+	
 	
 func handle_stamina_bar(delta):
 	if stamina < max_stamina:

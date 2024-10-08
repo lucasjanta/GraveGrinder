@@ -10,13 +10,11 @@ var zombies_killed : int
 var tombstones_destroyed : int
 var time_in_grind
 
-
 var highscore : float
 var recordtime : float
 var zombies_killed_record : int
 var tombstones_destroyed_record : int
 var time_in_grind_record
-
 
 func save_file(level):
 	var file = FileAccess.open("user://level" + str(level) + ".dat", FileAccess.WRITE)

@@ -44,7 +44,7 @@ func _physics_process(delta):
 	handle_stopwatch()
 	handle_velocity_bar()
 	handle_stamina_bar(delta)
-	handle_score(delta)
+	#handle_score(delta)
 	#Adiciona gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -65,7 +65,7 @@ func take_hit(slow_amount, body) -> void:
 
 func handle_stopwatch():
 	stopwatch_label.text = stopwatch.time_to_string()
-	UI.speedrun_time = stopwatch.time_to_string()
+	UI.speedrun_time = stopwatch.time
 	
 func handle_stamina_bar(delta):
 	if stamina < max_stamina:
@@ -88,16 +88,16 @@ func handle_velocity_bar():
 		velocity_bar.tint_progress = "00ff00"
 	vel_label.text = str(int(velocity.x))
 		
-func handle_score(delta):
-	if velocity.x > 50 and velocity.x <= 100:
-		UI.score += delta * 2
-	if velocity.x > 100 and velocity.x <= 200:
-		UI.score += delta * 4
-	if velocity.x > 200 and velocity.x <= 300:
-		UI.score += delta * 8
-	if velocity.x > 300:
-		UI.score += delta * 16
-	score.text = "Score: " + str(int(UI.score))
+#func handle_score(delta):
+	#if velocity.x > 50 and velocity.x <= 100:
+		#UI.score += delta * 2
+	#if velocity.x > 100 and velocity.x <= 200:
+		#UI.score += delta * 4
+	#if velocity.x > 200 and velocity.x <= 300:
+		#UI.score += delta * 8
+	#if velocity.x > 300:
+		#UI.score += delta * 16
+	#score.text = "Score: " + str(int(UI.score))
 	
 func show_status(status):
 	status_pop.text = status

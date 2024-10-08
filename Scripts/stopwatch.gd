@@ -1,7 +1,7 @@
 extends Node
 class_name Stopwatch
 
-var time = 0.0
+var time : float = 0.0
 var stopped : bool = false
 
 func _process(delta):

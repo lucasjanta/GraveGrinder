@@ -5,14 +5,14 @@ var selected_level : int
 #var finished_level : bool
 
 var score : float = 0
-var speedrun_time : String
+var speedrun_time : float
 var zombies_killed : int
 var tombstones_destroyed : int
 var time_in_grind
 
 
 var highscore : float
-var recordtime : String
+var recordtime : float
 var zombies_killed_record : int
 var tombstones_destroyed_record : int
 var time_in_grind_record
@@ -85,3 +85,12 @@ func level_results(finished_level : bool):
 		get_tree().change_scene_to_file("res://Scenes/Menus/level_results.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/Menus/game_over.tscn")
+
+func time_to_string(time) -> String:
+	var msec = fmod(time, 1) * 1000
+	var sec = fmod(time, 60)
+	var minute = time / 60
+	#formatting time to look like this: 00:00:000
+	var format_string = "%02d : %02d : %02d"
+	var actual_string = format_string % [minute, sec, msec]
+	return actual_string

@@ -12,9 +12,9 @@ func enter(previous_state_path: String, data := {}) -> void:
 	
 func physics_update(_delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
-		finished.emit("Ollie")
+		finished.emit("TkPrepare") #Adicionar esse estado
 
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "push":
-		finished.emit("Mount")
+		finished.emit("Stand")

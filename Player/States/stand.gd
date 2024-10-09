@@ -1,7 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
-	player.animation_player.play("mounted")
+	player.animation_player.play("stand")
 
 func physics_update(_delta: float) -> void:
 	#Ir para a animação de morte

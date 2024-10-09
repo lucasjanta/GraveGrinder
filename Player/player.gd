@@ -15,6 +15,8 @@ const MAX_SPEED : float = 400.0
 var jump_force : float = -250
 var max_stamina : float = 100
 var stamina : float = max_stamina
+
+var on_grind : bool = false
 var is_cam_shaking : bool = false
 var game_over : bool = false
 
@@ -44,7 +46,6 @@ func _physics_process(delta):
 	handle_stopwatch()
 	handle_velocity_bar()
 	handle_stamina_bar(delta)
-	#handle_score(delta)
 	#Adiciona gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -88,28 +89,7 @@ func handle_velocity_bar():
 	if velocity_bar.value >= 300 and velocity_bar.value <= 450:
 		velocity_bar.tint_progress = "00ff00"
 	vel_label.text = str(int(velocity.x))
-		
-#func handle_score(delta):
-	#if velocity.x > 50 and velocity.x <= 100:
-		#UI.score += delta * 2
-	#if velocity.x > 100 and velocity.x <= 200:
-		#UI.score += delta * 4
-	#if velocity.x > 200 and velocity.x <= 300:
-		#UI.score += delta * 8
-	#if velocity.x > 300:
-		#UI.score += delta * 16
-	#score.text = "Score: " + str(int(UI.score))
 	
 func show_status(status):
 	status_pop.text = status
 	status_pop_anim.play("status_pop")
-	
-#func shake_camera(camera, duration, intensity, delta):
-	#if is_cam_shaking:
-		#if duration > 0:
-			#print("funcionano")
-			#duration -= delta
-			#var shake_amt = Vector2(randf_range(-1, 1), randf_range(-1, 1)) * intensity
-			#camera.global_position += shake_amt
-		#else:
-			#is_cam_shaking = false

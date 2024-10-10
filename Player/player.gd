@@ -50,10 +50,14 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	#Adiciona fricção
+	#Adiciona uma fricção no chão e outra fricção no grind
 	if is_on_floor():
-		if velocity.x != 0:
-			velocity.x = move_toward(velocity.x, 0, delta * friction)
+		if !on_grind:
+			if velocity.x != 0:
+				velocity.x = move_toward(velocity.x, 0, delta * friction)
+		else:
+			if velocity.x != 0:
+				velocity.x = move_toward(velocity.x, 0, delta * (friction/3))
 	move_and_slide()
 
 func take_hit(slow_amount, body) -> void:

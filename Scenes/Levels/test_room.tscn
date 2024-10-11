@@ -1444,12 +1444,15 @@ ease = 2
 
 [node name="TestRoom" type="Node2D"]
 
-[node name="grindtomb" parent="." instance=ExtResource("1_oeola")]
-position = Vector2(402, 94)
-
 [node name="portal" parent="." instance=ExtResource("2_l8pxc")]
 position = Vector2(2449, 64)
 scale = Vector2(2, 2)
+
+[node name="grindtomb2" parent="." instance=ExtResource("1_oeola")]
+position = Vector2(1212, 94)
+
+[node name="grindtomb" parent="." instance=ExtResource("1_oeola")]
+position = Vector2(318, 94)
 
 [node name="tombstone" parent="." instance=ExtResource("3_0j1vi")]
 position = Vector2(555, 113)
@@ -1471,12 +1474,12 @@ tile_set = SubResource("TileSet_qc85m")
 tile_set = SubResource("TileSet_qc85m")
 
 [node name="Player" parent="." instance=ExtResource("6_5x5h8")]
-position = Vector2(101, 48)
+position = Vector2(426, -111)
 friction = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 physics_interpolation_mode = 1
-position = Vector2(266.667, 48)
+position = Vector2(426, 40)
 zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = -110
@@ -1491,7 +1494,7 @@ visible = false
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-position = Vector2(266.667, 48)
+position = Vector2(426, 40)
 script = ExtResource("8_w6tf2")
 follow_mode = 1
 follow_target = NodePath("../Player")

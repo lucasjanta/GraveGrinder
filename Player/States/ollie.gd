@@ -8,7 +8,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.velocity.y = player.jump_force
 
 func physics_update(_delta: float) -> void:
-	if player.on_grind:
+	if player.on_grind and player.is_on_floor():
 		finished.emit("Grind")
 	if player.velocity.y > 0:
 		player.animation_player.play("ollie_down")

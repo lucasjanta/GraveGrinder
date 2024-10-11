@@ -12,7 +12,7 @@ class_name Player extends CharacterBody2D
 
 const MAX_SPEED : float = 400.0
 
-var jump_force : float = -250
+@export var jump_force : float = -250
 var max_stamina : float = 100
 var stamina : float = max_stamina
 
@@ -31,7 +31,7 @@ var game_over : bool = false
 @onready var status_pop = $status_pop
 @onready var status_pop_anim = $status_pop_anim
 
-
+#Preciso adicionar mudanças nas collision shapes nas animações
 
 func _ready():
 	UI.player = self

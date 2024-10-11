@@ -1,6 +1,7 @@
 extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
+	player.jump_force = -250
 	player.animation_player.play("stand")
 
 func physics_update(_delta: float) -> void:
@@ -16,11 +17,11 @@ func physics_update(_delta: float) -> void:
 	#if Input.is_action_just_pressed("left") and player.velocity.x <= 0 and player.is_on_floor():
 		#player.direction = -1
 		#finished.emit("Push")
-	#Frear aumentando a fricção
+	#Frear aumentando a fricção BUGADO (adicionar estado)
 	if Input.is_action_pressed("down") and player.velocity.x > 0 and player.is_on_floor():
 		player.friction = 350
 	if Input.is_action_just_released("down"):
 		player.friction = 10
 	#Pulo
 	if Input.is_action_pressed("jump") and player.is_on_floor():
-		finished.emit("Ollie")
+		finished.emit("TkPrepare")

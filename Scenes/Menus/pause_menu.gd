@@ -3,7 +3,7 @@ extends Control
 @onready var level_node = $"../.."
 var paused : bool = false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		pause_or_unpause()
 

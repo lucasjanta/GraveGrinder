@@ -4,8 +4,7 @@ var change_back_to_mount : bool = false
 
 func enter(previous_state_path: String, data := {}) -> void:
 	player.animation_player.play("trick_prep")
-	player.jump_force = -250 #remover se não fizer sentido com as manobras
-
+	
 func physics_update(_delta: float) -> void:
 	if Input.is_action_just_released("jump") and player.is_on_floor():
 		finished.emit("Ollie")

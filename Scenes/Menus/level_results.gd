@@ -127,11 +127,11 @@ func tomb_points_anim() -> void:
 func rank_anim() -> void:
 	if UI.score >= 10000:
 		rank.text = "S"
-	elif UI.score >= 9800:
-		rank.text = "A"
-	elif UI.score >= 9500:
-		rank.text = "B"
 	elif UI.score >= 9000:
+		rank.text = "A"
+	elif UI.score >= 8000:
+		rank.text = "B"
+	elif UI.score >= 7000:
 		rank.text = "C"
 	else:
 		rank.text = "D"

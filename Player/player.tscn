@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bqknruc6qvmah"]
+[gd_scene load_steps=76 format=3 uid="uid://bqknruc6qvmah"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_yiaw7"]
 [ext_resource type="PackedScene" uid="uid://4n2i7n655ca5" path="res://Scenes/Usable/stopwatch.tscn" id="2_dcwha"]
@@ -17,6 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://dkduep2pd7h3d" path="res://UI/stamina_bar/stamina_bar_bg.png" id="13_ncyn0"]
 [ext_resource type="Texture2D" uid="uid://dumayq032eh4e" path="res://UI/stamina_bar/stamina_bar_over.png" id="14_niaqq"]
 [ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="15_wberw"]
+[ext_resource type="Texture2D" uid="uid://ccqy3mxo1rr7r" path="res://UI/grind_elements/balance_bar.png" id="18_0stva"]
+[ext_resource type="Texture2D" uid="uid://6lacgq7m8ac0" path="res://UI/grind_elements/grind_stamina_line.png" id="18_gnc5g"]
+[ext_resource type="Script" path="res://Player/balance_bar.gd" id="19_qq07j"]
+[ext_resource type="Texture2D" uid="uid://bc3maaf8i1d3r" path="res://UI/grind_elements/grind_stamina_under.png" id="19_u357v"]
+[ext_resource type="Texture2D" uid="uid://bawmsoeaxiqkw" path="res://UI/grind_elements/cursor.png" id="20_kenty"]
+[ext_resource type="Script" path="res://UI/grind_elements/grind_stamina.gd" id="20_wmdci"]
 
 [sub_resource type="Animation" id="Animation_kvpfk"]
 length = 0.001
@@ -1520,6 +1526,40 @@ offset_bottom = -63.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "00:00:000"
+
+[node name="grind_stamina" type="TextureProgressBar" parent="HUD"]
+visible = false
+offset_left = 194.0
+offset_top = 84.0
+offset_right = 202.0
+offset_bottom = 116.0
+fill_mode = 3
+texture_over = ExtResource("18_gnc5g")
+texture_progress = ExtResource("19_u357v")
+script = ExtResource("20_wmdci")
+
+[node name="balance_bar" type="TextureProgressBar" parent="HUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = 20.0
+offset_right = 22.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource("18_0stva")
+script = ExtResource("19_qq07j")
+
+[node name="cursor" type="StaticBody2D" parent="HUD/balance_bar"]
+position = Vector2(2, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/balance_bar/cursor"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("20_kenty")
 
 [node name="status_pop" type="Label" parent="."]
 visible = false

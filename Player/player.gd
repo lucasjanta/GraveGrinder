@@ -15,6 +15,11 @@ const MAX_SPEED : float = 400.0
 @export var jump_force : float = -250
 var max_stamina : float = 100
 var stamina : float = max_stamina
+var balance : int = 0
+var balance_dir : int = 1
+var cursor_speed : int = 1
+var max_balance_stamina : float = 100
+var balance_stamina : float = max_balance_stamina
 
 var on_grind : bool = false
 var is_cam_shaking : bool = false
@@ -26,6 +31,9 @@ var game_over : bool = false
 @onready var velocity_bar = $HUD/Velocity
 @onready var stamina_bar = $HUD/Stamina
 @onready var vel_label = $HUD/vel_num
+@onready var grind_stamina_ref = $HUD/grind_stamina
+@onready var balance_bar_ref = $HUD/balance_bar
+
 
 #variaveis do status
 @onready var status_pop = $status_pop
@@ -46,6 +54,7 @@ func _physics_process(delta):
 	handle_stopwatch()
 	handle_velocity_bar()
 	handle_stamina_bar(delta)
+	handle_grind()
 	#Adiciona gravidade
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -93,6 +102,14 @@ func handle_velocity_bar():
 	if velocity_bar.value >= 300 and velocity_bar.value <= 450:
 		velocity_bar.tint_progress = "00ff00"
 	vel_label.text = str(int(velocity.x))
+	
+func handle_grind():
+	if on_grind:
+		grind_stamina_ref.visible = true
+		balance_bar_ref.visible = true
+	else:
+		grind_stamina_ref.visible = false
+		balance_bar_ref.visible = false
 	
 func show_status(status):
 	status_pop.text = status

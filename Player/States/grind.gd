@@ -1,5 +1,7 @@
 extends PlayerState
 @onready var grind_stamina = $"../../HUD/grind_stamina"
+@onready var balance_status_anim = $"../../HUD/balance_status_anim"
+
 
 #se a velocidade acabar no grid atualmente, vc fica PRESO
 #colocar uma mecânica de controle de equilíbrio e velocidade em cima do grid
@@ -27,16 +29,19 @@ func physics_update(delta: float) -> void:
 			print("area verde")
 			player.balance_stamina += 20
 			player.velocity.x += 50
+			balance_status_anim.play("perfect")
 		if player.balance >= 15 and player.balance < 30 or player.balance > 70  and player.balance <= 85:
 			print("area amarela")
 			player.balance_stamina += 10
 			player.velocity.x += 20
+			balance_status_anim.play("good")
 		if player.balance >= 0 and player.balance < 15 or player.balance > 85  and player.balance <= 100:
 			print("area vermelha")
 			player.balance_stamina -= 20
 			player.velocity.x -= 20
+			balance_status_anim.play("miss")
 		if player.balance_stamina > 100:
-				player.balance_stamina = 100
+			player.balance_stamina = 100
 	
 	grind_stamina.value = player.balance_stamina
 	

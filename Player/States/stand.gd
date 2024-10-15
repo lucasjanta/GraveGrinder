@@ -6,7 +6,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 
 func physics_update(_delta: float) -> void:
 	if player.balance_stamina < 100:
-		player.balance_stamina += 2
+		player.balance_stamina += 1
 	else:
 		player.balance_stamina = 100
 	#Ir para a animação de morte

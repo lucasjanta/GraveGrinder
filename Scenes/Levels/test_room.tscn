@@ -1449,7 +1449,13 @@ position = Vector2(2449, 64)
 scale = Vector2(2, 2)
 
 [node name="grindtomb2" parent="." instance=ExtResource("1_oeola")]
-position = Vector2(790, 94)
+position = Vector2(718, 94)
+
+[node name="grindtomb3" parent="." instance=ExtResource("1_oeola")]
+position = Vector2(1117, 94)
+
+[node name="grindtomb4" parent="." instance=ExtResource("1_oeola")]
+position = Vector2(1517, 94)
 
 [node name="grindtomb" parent="." instance=ExtResource("1_oeola")]
 position = Vector2(318, 94)

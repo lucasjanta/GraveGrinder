@@ -8,6 +8,7 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.jump_force = -300
 
 func physics_update(delta: float) -> void:
+	player.cursor_speed = player.velocity.x / 100
 	if player.balance_stamina < 0:
 		player.balance_stamina = 0
 	else:

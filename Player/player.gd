@@ -1,5 +1,5 @@
 class_name Player extends CharacterBody2D
-
+#Teste teste teste
 @export var gravity : float = 750
 @export var friction : float = 10.0
 @export var acceleration : float = 75.0

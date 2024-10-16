@@ -10,7 +10,12 @@ func enter(previous_state_path: String, data := {}) -> void:
 	player.jump_force = -300
 
 func physics_update(delta: float) -> void:
-	player.cursor_speed = player.velocity.x / 100
+	#define a velocidade do ponteiro da UI no grind
+	if player.velocity.x >= 100:
+		player.cursor_speed = player.velocity.x / 100
+	else:
+		player.cursor_speed = 1
+		
 	if player.balance_stamina < 0:
 		player.balance_stamina = 0
 	else:

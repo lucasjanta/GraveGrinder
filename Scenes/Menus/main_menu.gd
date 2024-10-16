@@ -2,6 +2,11 @@ extends Control
 
 @onready var label = $Label
 
+func _ready():
+	AudioManager.main_menu.play()
+	
+func _exit_tree():
+	AudioManager.main_menu.stop()
 
 func _process(delta):
 	if get_viewport().get_mouse_position().x > 160:

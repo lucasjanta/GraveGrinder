@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4bwmul1x7pp4"]
+
+[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_mve23"]
+[ext_resource type="AudioStream" uid="uid://cch5ulckdo4uh" path="res://Sounds/Music/Boiler.ogg" id="2_oeqx5"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_mve23")
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oeqx5")

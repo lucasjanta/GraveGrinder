@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 UI="*res://Scripts/on_screen_ui.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+AudioManager="*res://Scenes/Usable/audio_manager.tscn"
 
 [display]
 

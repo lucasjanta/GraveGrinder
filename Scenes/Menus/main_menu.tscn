@@ -126,7 +126,7 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 24
-text = "Graveyard Grinder"
+text = "Grave Grinder"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_startgame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]

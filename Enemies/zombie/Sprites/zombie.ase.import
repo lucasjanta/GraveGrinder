@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://be80n1kfuo7fg"
+path="res://.godot/imported/zombie.ase-3e0795123a2e0d78ebfaf8c91163aa9b.res"
+
+[deps]
+
+source_file="res://Enemies/zombie/Sprites/zombie.ase"
+dest_files=["res://.godot/imported/zombie.ase-3e0795123a2e0d78ebfaf8c91163aa9b.res"]
+
+[params]
+

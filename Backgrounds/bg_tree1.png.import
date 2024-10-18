@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brww2urpf1aqm"
-path="res://.godot/imported/bg_close_clouds.png-8105c59621455aa2fdbea8a67fae3fe0.ctex"
+uid="uid://5nqgbtsowwin"
+path="res://.godot/imported/bg_tree1.png-ae00c36dc85a2d277ffd7bbff41955c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/bg_close_clouds.png"
-dest_files=["res://.godot/imported/bg_close_clouds.png-8105c59621455aa2fdbea8a67fae3fe0.ctex"]
+source_file="res://Backgrounds/bg_tree1.png"
+dest_files=["res://.godot/imported/bg_tree1.png-ae00c36dc85a2d277ffd7bbff41955c0.ctex"]
 
 [params]
 

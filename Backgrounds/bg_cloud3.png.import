@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddum3apd1tgku"
-path="res://.godot/imported/bg_close_trees.png-55bc58ec2964d55022aeed1ac7e42d44.ctex"
+uid="uid://dpqkgw8slstwd"
+path="res://.godot/imported/bg_cloud3.png-db0b8cc624d5c1a7cf40d2b889c5eb9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/bg_close_trees.png"
-dest_files=["res://.godot/imported/bg_close_trees.png-55bc58ec2964d55022aeed1ac7e42d44.ctex"]
+source_file="res://Backgrounds/bg_cloud3.png"
+dest_files=["res://.godot/imported/bg_cloud3.png-db0b8cc624d5c1a7cf40d2b889c5eb9d.ctex"]
 
 [params]
 

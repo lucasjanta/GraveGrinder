@@ -8,3 +8,4 @@ script = ExtResource("1_mve23")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_oeqx5")
+parameters/looping = true

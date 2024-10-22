@@ -50,3 +50,11 @@ func _on_play_pressed():
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
+
+func _on_infinite_pressed():
+	if UI.selected_level == 1:
+		print("nivel 1 no modo infinito")
+	if UI.selected_level == 2:
+		print("nivel 2 no modo infinito")
+	if UI.selected_level == 3:
+		print("nivel 3 no modo infinito")

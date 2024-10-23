@@ -29,6 +29,9 @@ var rank_animation : bool = false
 
 #ao ir pra essa tela salva o resultado da run
 func _ready():
+	#musica de game over
+	AudioManager.stop_level_music()
+	AudioManager.youwin.play()
 	#score: ponto do tempo + pontos dos zumbis - tombstones destruidas
 	UI.score = get_points()
 	UI.check_score(UI.selected_level)

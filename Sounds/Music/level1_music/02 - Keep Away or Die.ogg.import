@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjfny5fmlbqi0"
+path="res://.godot/imported/02 - Keep Away or Die.ogg-1d810a8615d38a0eb3b597dbaf2bffdb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Music/level1_music/02 - Keep Away or Die.ogg"
+dest_files=["res://.godot/imported/02 - Keep Away or Die.ogg-1d810a8615d38a0eb3b597dbaf2bffdb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

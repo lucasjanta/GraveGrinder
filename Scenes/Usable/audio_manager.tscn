@@ -1,11 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4bwmul1x7pp4"]
+[gd_scene load_steps=9 format=3 uid="uid://d4bwmul1x7pp4"]
 
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_mve23"]
-[ext_resource type="AudioStream" uid="uid://cch5ulckdo4uh" path="res://Sounds/Music/Boiler.ogg" id="2_oeqx5"]
+[ext_resource type="AudioStream" uid="uid://byvi2cc756qex" path="res://Sounds/Music/Menus/11 - Take a break.ogg" id="2_orjgc"]
+[ext_resource type="AudioStream" uid="uid://b6pyj0rmxosj2" path="res://Sounds/Music/level1_music/01 - Run Like the Wind.ogg" id="3_71tfx"]
+[ext_resource type="AudioStream" uid="uid://bvybiv4kudt7s" path="res://Sounds/SFX/You Win.ogg" id="3_of1b5"]
+[ext_resource type="AudioStream" uid="uid://bjfny5fmlbqi0" path="res://Sounds/Music/level1_music/02 - Keep Away or Die.ogg" id="4_mtxqg"]
+[ext_resource type="AudioStream" uid="uid://ceyx53slx67t3" path="res://Sounds/SFX/You Loss.ogg" id="4_vq1cv"]
+[ext_resource type="AudioStream" uid="uid://dhnv63y8temdp" path="res://Sounds/Music/level1_music/06 - Easy Money.ogg" id="5_xqssi"]
+[ext_resource type="AudioStream" uid="uid://83ynqrjcfg2o" path="res://Sounds/Music/level1_music/08 - What is my name_.ogg" id="6_2mle8"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_mve23")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_oeqx5")
+stream = ExtResource("2_orjgc")
 parameters/looping = true
+
+[node name="Level1Track1" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("3_71tfx")
+parameters/looping = true
+
+[node name="Level1Track2" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("4_mtxqg")
+parameters/looping = true
+
+[node name="Level1Track3" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("5_xqssi")
+parameters/looping = true
+
+[node name="Level1Track4" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("6_2mle8")
+parameters/looping = true
+
+[node name="youwin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_of1b5")
+
+[node name="youlose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vq1cv")

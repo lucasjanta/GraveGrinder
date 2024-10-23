@@ -47,6 +47,7 @@ func _on_next_pressed():
 
 func _on_play_pressed():
 	UI.start_level(UI.selected_level)
+	AudioManager.main_menu.stop()
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")

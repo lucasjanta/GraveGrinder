@@ -6,6 +6,8 @@ extends Control
 
 
 func _ready():
+	AudioManager.stop_level_music()
+	AudioManager.youlose.play()
 	best_score.text = "Highscore: " + str(int(UI.highscore))
 	#animation_player.play("show_transition")
 

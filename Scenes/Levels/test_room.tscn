@@ -1690,6 +1690,7 @@ script = ExtResource("7_7iqtj")
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("7_2hhif")]
 process_mode = 3
 visible = false
+z_index = 100
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 position = Vector2(266.667, 111)

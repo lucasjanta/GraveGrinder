@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhnv63y8temdp"
+path="res://.godot/imported/06 - Easy Money.ogg-7059029426f7b8ba360f3f40a224f1cc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Music/level1_music/06 - Easy Money.ogg"
+dest_files=["res://.godot/imported/06 - Easy Money.ogg-7059029426f7b8ba360f3f40a224f1cc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

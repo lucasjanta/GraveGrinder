@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://83ynqrjcfg2o"
+path="res://.godot/imported/08 - What is my name_.ogg-6b22df159448be3cab85e9ee9690a8ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Music/level1_music/08 - What is my name_.ogg"
+dest_files=["res://.godot/imported/08 - What is my name_.ogg-6b22df159448be3cab85e9ee9690a8ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

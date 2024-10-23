@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bvybiv4kudt7s"
+path="res://.godot/imported/You Win.ogg-e6417cb64100962f9d2397c90076ed9c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/SFX/You Win.ogg"
+dest_files=["res://.godot/imported/You Win.ogg-e6417cb64100962f9d2397c90076ed9c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b6pyj0rmxosj2"
+path="res://.godot/imported/01 - Run Like the Wind.ogg-7b49af6cbf5fa899ba05dcf78ae3ce40.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Music/level1_music/01 - Run Like the Wind.ogg"
+dest_files=["res://.godot/imported/01 - Run Like the Wind.ogg-7b49af6cbf5fa899ba05dcf78ae3ce40.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

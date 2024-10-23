@@ -10,3 +10,5 @@ func _ready():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "start_anim":
 		get_tree().paused = false
+		if UI.selected_level == 1:
+			AudioManager.select_random_level1_music()

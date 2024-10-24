@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addon
 [global_group]
 
 stopwatch="speedrun timer group"
+SFX="Game SFX"
 
 [input]
 

@@ -260,5 +260,7 @@ libraries = {
 }
 autoplay = "show_transition"
 
+[connection signal="mouse_entered" from="Retry" to="." method="_on_retry_mouse_entered"]
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="Main Menu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]

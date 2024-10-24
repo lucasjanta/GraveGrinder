@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4bwmul1x7pp4"]
+[gd_scene load_steps=11 format=3 uid="uid://d4bwmul1x7pp4"]
 
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_mve23"]
 [ext_resource type="AudioStream" uid="uid://byvi2cc756qex" path="res://Sounds/Music/Menus/11 - Take a break.ogg" id="2_orjgc"]
@@ -8,36 +8,56 @@
 [ext_resource type="AudioStream" uid="uid://ceyx53slx67t3" path="res://Sounds/SFX/You Loss.ogg" id="4_vq1cv"]
 [ext_resource type="AudioStream" uid="uid://dhnv63y8temdp" path="res://Sounds/Music/level1_music/06 - Easy Money.ogg" id="5_xqssi"]
 [ext_resource type="AudioStream" uid="uid://83ynqrjcfg2o" path="res://Sounds/Music/level1_music/08 - What is my name_.ogg" id="6_2mle8"]
+[ext_resource type="AudioStream" uid="uid://c0e5uq75pkes0" path="res://Sounds/SFX/menu_hover.ogg" id="9_y6oyb"]
+[ext_resource type="AudioStream" uid="uid://5r8v0jltssp1" path="res://Sounds/SFX/menu_click.wav" id="10_rb4da"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_mve23")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_orjgc")
+bus = &"Music"
 parameters/looping = true
 
 [node name="Level1Track1" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = ExtResource("3_71tfx")
+bus = &"Music"
 parameters/looping = true
 
 [node name="Level1Track2" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = ExtResource("4_mtxqg")
+bus = &"Music"
 parameters/looping = true
 
 [node name="Level1Track3" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = ExtResource("5_xqssi")
+bus = &"Music"
 parameters/looping = true
 
 [node name="Level1Track4" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = ExtResource("6_2mle8")
+bus = &"Music"
 parameters/looping = true
 
 [node name="youwin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_of1b5")
+bus = &"SFX"
 
 [node name="youlose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vq1cv")
+bus = &"SFX"
+
+[node name="UI_sounds" type="Node" parent="."]
+
+[node name="button_hover" type="AudioStreamPlayer" parent="UI_sounds" groups=["SFX"]]
+stream = ExtResource("9_y6oyb")
+bus = &"SFX"
+
+[node name="button_click" type="AudioStreamPlayer" parent="UI_sounds" groups=["SFX"]]
+stream = ExtResource("10_rb4da")
+volume_db = 12.0
+bus = &"SFX"

@@ -63,19 +63,31 @@ func _process(_delta):
 		rank_anim()
 
 func _on_retry_pressed():
+	AudioManager.button_click.play()
 	UI.start_level(UI.selected_level)
 
 func _on_main_menu_pressed():
+	AudioManager.button_click.play()
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 func _on_next_level_pressed():
+	AudioManager.button_click.play()
 	if UI.selected_level < 3:
 		UI.selected_level += 1
 	else:
 		print("configurar tela de game zerado")
 		return
 	UI.start_level(UI.selected_level)
+	
+func _on_retry_mouse_entered():
+	AudioManager.button_hover.play()
 
+func _on_main_menu_mouse_entered():
+	AudioManager.button_hover.play()
+
+func _on_next_level_mouse_entered():
+	AudioManager.button_hover.play()
+	
 func time_anim() -> void:
 	if !time_animation:
 		time_animation = !time_animation

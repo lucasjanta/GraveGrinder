@@ -14,13 +14,30 @@ func _process(delta):
 	
 	
 func _on_startgame_pressed():
+	AudioManager.button_click.play()
 	get_tree().change_scene_to_file("res://Scenes/Menus/level_selection.tscn")
-
+	
+func _on_start_mouse_entered():
+	AudioManager.button_hover.play()
+	
 func _on_tutorial_pressed():
+	AudioManager.button_click.play()
 	pass # Replace with function body.
+	
+func _on_tutorial_mouse_entered():
+	AudioManager.button_hover.play()
 
 func _on_settings_pressed():
+	AudioManager.button_click.play()
 	get_tree().change_scene_to_file("res://Scenes/Menus/settings.tscn")
-
+	
+func _on_options_mouse_entered():
+	AudioManager.button_hover.play()
+	
 func _on_quit_pressed():
+	AudioManager.button_click.play()
 	get_tree().quit()
+
+func _on_quit_mouse_entered():
+	AudioManager.button_hover.play()
+	

@@ -4,10 +4,16 @@ extends Node
 @onready var youwin = $youwin
 @onready var youlose = $youlose
 
+#LV1 TRACKS
 @onready var l1_track1 = $Level1Track1
 @onready var l1_track2 = $Level1Track2
 @onready var l1_track3 = $Level1Track3
 @onready var l1_track4 = $Level1Track4
+
+#UI SOUNDS
+@onready var button_hover = $UI_sounds/button_hover
+@onready var button_click = $UI_sounds/button_click
+
 
 var selected_track : AudioStreamPlayer
 

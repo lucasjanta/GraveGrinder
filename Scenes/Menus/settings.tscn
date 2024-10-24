@@ -103,9 +103,11 @@ alignment = 1
 layout_mode = 2
 text = "Master"
 
-[node name="HSlider" type="HSlider" parent="AudioContainer/Master"]
+[node name="master_slider" type="HSlider" parent="AudioContainer/Master"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.001
 
 [node name="Music" type="HBoxContainer" parent="AudioContainer"]
 layout_mode = 2
@@ -116,9 +118,11 @@ alignment = 1
 layout_mode = 2
 text = "Music"
 
-[node name="HSlider2" type="HSlider" parent="AudioContainer/Music"]
+[node name="music_slider" type="HSlider" parent="AudioContainer/Music"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.001
 
 [node name="Sound Effects" type="HBoxContainer" parent="AudioContainer"]
 layout_mode = 2
@@ -129,9 +133,11 @@ alignment = 1
 layout_mode = 2
 text = "Sound FX"
 
-[node name="HSlider3" type="HSlider" parent="AudioContainer/Sound Effects"]
+[node name="SFX_slider" type="HSlider" parent="AudioContainer/Sound Effects"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.001
 
 [node name="MiscContainer" type="VBoxContainer" parent="."]
 visible = false
@@ -147,8 +153,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Reset Highscore"
 
+[connection signal="mouse_entered" from="VBoxContainer/Video" to="." method="_on_video_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Audio" to="." method="_on_audio_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Misc" to="." method="_on_misc_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Misc" to="." method="_on_misc_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Return" to="." method="_on_return_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="value_changed" from="AudioContainer/Master/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="AudioContainer/Music/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="MiscContainer/ResetScore" to="." method="_on_reset_score_pressed"]

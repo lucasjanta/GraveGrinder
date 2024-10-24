@@ -32,6 +32,7 @@ func load_level_data():
 		
 
 func _on_previous_pressed():
+	AudioManager.button_click.play()
 	if UI.selected_level > 1:
 		UI.selected_level -= 1
 	else:
@@ -39,6 +40,7 @@ func _on_previous_pressed():
 	load_level_data()
 
 func _on_next_pressed():
+	AudioManager.button_click.play()
 	if UI.selected_level < 3:
 		UI.selected_level += 1
 	else:
@@ -46,16 +48,34 @@ func _on_next_pressed():
 	load_level_data()
 
 func _on_play_pressed():
+	AudioManager.button_click.play()
 	UI.start_level(UI.selected_level)
 	AudioManager.main_menu.stop()
 
 func _on_back_pressed():
+	AudioManager.button_click.play()
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 func _on_infinite_pressed():
+	AudioManager.button_click.play()
 	if UI.selected_level == 1:
 		print("nivel 1 no modo infinito")
 	if UI.selected_level == 2:
 		print("nivel 2 no modo infinito")
 	if UI.selected_level == 3:
 		print("nivel 3 no modo infinito")
+
+func _on_previous_mouse_entered():
+	AudioManager.button_hover.play()
+
+func _on_next_mouse_entered():
+	AudioManager.button_hover.play()
+
+func _on_play_mouse_entered():
+	AudioManager.button_hover.play()
+
+func _on_back_mouse_entered():
+	AudioManager.button_hover.play()
+
+func _on_infinite_mouse_entered():
+	AudioManager.button_hover.play()

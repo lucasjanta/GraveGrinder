@@ -317,6 +317,9 @@ libraries = {
 "": SubResource("AnimationLibrary_ocgig")
 }
 
+[connection signal="mouse_entered" from="Stats/VBoxContainer/HBoxContainer2/Retry" to="." method="_on_retry_mouse_entered"]
 [connection signal="pressed" from="Stats/VBoxContainer/HBoxContainer2/Retry" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="Stats/VBoxContainer/HBoxContainer2/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="Stats/VBoxContainer/HBoxContainer2/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="Stats/VBoxContainer/NextLevel" to="." method="_on_next_level_mouse_entered"]
 [connection signal="pressed" from="Stats/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

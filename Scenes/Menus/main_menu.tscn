@@ -128,7 +128,11 @@ theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 24
 text = "Grave Grinder"
 
+[connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_startgame_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

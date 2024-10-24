@@ -49,7 +49,11 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_6a61s")
 text = "Quit"
 
+[connection signal="mouse_entered" from="VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Retry" to="." method="_on_retry_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

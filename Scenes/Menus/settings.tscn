@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brp76xq3dewbq"]
+[gd_scene load_steps=5 format=3 uid="uid://brp76xq3dewbq"]
 
 [ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="1_chqnp"]
 [ext_resource type="Script" path="res://Scenes/Menus/settings.gd" id="1_tbvlh"]
+[ext_resource type="PackedScene" uid="uid://b28mq268uedi5" path="res://UI/input_settings/input_settings.tscn" id="3_gmfib"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_0ye3n"]
 
@@ -41,6 +42,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_0ye3n")
 text = "Audio"
 
+[node name="Controls" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_chqnp")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_0ye3n")
+text = "Controls"
+
 [node name="Misc" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_chqnp")
@@ -52,6 +60,17 @@ text = "Misc"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_chqnp")
 text = "Return"
+
+[node name="InputSettings" parent="." instance=ExtResource("3_gmfib")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 35.0
+offset_right = 35.0
 
 [node name="VideoContainer" type="VBoxContainer" parent="."]
 visible = false
@@ -157,11 +176,16 @@ text = "Reset Highscore"
 [connection signal="pressed" from="VBoxContainer/Video" to="." method="_on_video_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Audio" to="." method="_on_audio_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Controls" to="." method="_on_controls_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Misc" to="." method="_on_misc_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Misc" to="." method="_on_misc_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Return" to="." method="_on_return_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="drag_ended" from="AudioContainer/Master/master_slider" to="." method="_on_master_slider_drag_ended"]
 [connection signal="value_changed" from="AudioContainer/Master/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="drag_ended" from="AudioContainer/Music/music_slider" to="." method="_on_music_slider_drag_ended"]
 [connection signal="value_changed" from="AudioContainer/Music/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="value_changed" from="AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="MiscContainer/ResetScore" to="." method="_on_reset_score_pressed"]

@@ -5,6 +5,7 @@ extends Control
 func _ready():
 	if !AudioManager.main_menu.playing:
 		AudioManager.main_menu.play()
+	
 
 func _process(delta):
 	if get_viewport().get_mouse_position().x > 160:

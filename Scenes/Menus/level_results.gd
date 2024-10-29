@@ -61,6 +61,7 @@ func _process(_delta):
 		score.text = "Score: " + str(int(final_points))
 	if rank_animation:
 		rank_anim()
+	
 
 func _on_retry_pressed():
 	AudioManager.button_click.play()

@@ -14,6 +14,11 @@ func _ready():
 	video_container.visible = true
 	audio_container.visible = false
 	misc_container.visible = false
+	
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		AudioManager.button_click.play()
+		get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 func _on_video_pressed():
 	video_container.visible = true

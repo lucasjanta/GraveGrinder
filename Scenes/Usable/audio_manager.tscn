@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4bwmul1x7pp4"]
+[gd_scene load_steps=12 format=3 uid="uid://d4bwmul1x7pp4"]
 
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_mve23"]
 [ext_resource type="AudioStream" uid="uid://byvi2cc756qex" path="res://Sounds/Music/Menus/11 - Take a break.ogg" id="2_orjgc"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://83ynqrjcfg2o" path="res://Sounds/Music/level1_music/08 - What is my name_.ogg" id="6_2mle8"]
 [ext_resource type="AudioStream" uid="uid://c0e5uq75pkes0" path="res://Sounds/SFX/menu_hover.ogg" id="9_y6oyb"]
 [ext_resource type="AudioStream" uid="uid://5r8v0jltssp1" path="res://Sounds/SFX/menu_click.wav" id="10_rb4da"]
+[ext_resource type="AudioStream" uid="uid://dwew1xmvh18bb" path="res://Sounds/SFX/points.wav" id="11_j5c3k"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_mve23")
@@ -61,3 +62,6 @@ bus = &"SFX"
 stream = ExtResource("10_rb4da")
 volume_db = 12.0
 bus = &"SFX"
+
+[node name="points" type="AudioStreamPlayer" parent="UI_sounds"]
+stream = ExtResource("11_j5c3k")

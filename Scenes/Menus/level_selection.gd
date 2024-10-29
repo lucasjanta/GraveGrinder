@@ -14,6 +14,11 @@ extends Control
 func _ready():
 	UI.selected_level = 1
 	load_level_data()
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		AudioManager.button_click.play()
+		get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 	
 func load_level_data():
 	if !UI.load_file(UI.selected_level):

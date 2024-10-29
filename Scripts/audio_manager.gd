@@ -13,6 +13,7 @@ extends Node
 #UI SOUNDS
 @onready var button_hover = $UI_sounds/button_hover
 @onready var button_click = $UI_sounds/button_click
+@onready var points = $UI_sounds/points
 
 
 var selected_track : AudioStreamPlayer

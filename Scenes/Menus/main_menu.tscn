@@ -1,9 +1,54 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcif2oega6tu8"]
+[gd_scene load_steps=16 format=3 uid="uid://bcif2oega6tu8"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_ytn0b"]
+[ext_resource type="Texture2D" uid="uid://d2gj01dounnvp" path="res://UI/menu_bg/gravegrinder.png" id="2_gtkg8"]
 [ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="2_mef47"]
+[ext_resource type="Texture2D" uid="uid://br6yjjqcc3wac" path="res://UI/menu_bg/muro.png" id="3_t2cxf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkl45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h81mt"]
+atlas = ExtResource("2_gtkg8")
+region = Rect2(0, 0, 288, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24sm1"]
+atlas = ExtResource("2_gtkg8")
+region = Rect2(288, 0, 288, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqdrn"]
+atlas = ExtResource("2_gtkg8")
+region = Rect2(576, 0, 288, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjfwy"]
+atlas = ExtResource("2_gtkg8")
+region = Rect2(0, 180, 288, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi707"]
+atlas = ExtResource("2_gtkg8")
+region = Rect2(288, 180, 288, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifcbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h81mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24sm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqdrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjfwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wi707")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ax3f"]
 
@@ -36,6 +81,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ytn0b")
+metadata/_edit_vertical_guides_ = [160.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(1.11111, 1.11111)
+texture = ExtResource("3_t2cxf")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -46,27 +100,50 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rkl45")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(45, 9)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_ifcbe")
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://UI/menu_bg",
+"o_name": "",
+"only_visible": true,
+"slice": "",
+"source": "res://UI/menu_bg/gravegrinder.ase"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "5be57bd902ddcc6030263f1532867bdc"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.5
-offset_top = -31.0
-offset_right = 53.5
-offset_bottom = 61.0
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -28.0
+offset_right = 135.0
+offset_bottom = -8.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
@@ -74,12 +151,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
 text = "Start Game"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
@@ -87,12 +165,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
 text = "Tutorial"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
@@ -100,33 +179,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
 text = "Quit"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -62.5
-offset_top = 23.0
-offset_right = 62.5
-offset_bottom = 46.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mef47")
-theme_override_font_sizes/font_size = 24
-text = "Grave Grinder"
 
 [connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_startgame_pressed"]

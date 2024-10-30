@@ -5,13 +5,13 @@ extends Control
 func _ready():
 	if !AudioManager.main_menu.playing:
 		AudioManager.main_menu.play()
-	
 
 func _process(delta):
-	if get_viewport().get_mouse_position().x > 160:
-		label.rotation_degrees = lerp_angle(label.rotation_degrees, deg_to_rad(45), 2.0 * delta)
-	elif get_viewport().get_mouse_position().x < 160:
-		label.rotation_degrees = lerp_angle(label.rotation_degrees, deg_to_rad(-45), 2.0 * delta)
+	pass
+	#if get_viewport().get_mouse_position().x > 160:
+		#label.rotation_degrees = lerp_angle(label.rotation_degrees, deg_to_rad(45), 2.0 * delta)
+	#elif get_viewport().get_mouse_position().x < 160:
+		#label.rotation_degrees = lerp_angle(label.rotation_degrees, deg_to_rad(-45), 2.0 * delta)
 	
 	
 func _on_startgame_pressed():
@@ -23,7 +23,6 @@ func _on_start_mouse_entered():
 	
 func _on_tutorial_pressed():
 	AudioManager.button_click.play()
-	pass # Replace with function body.
 	
 func _on_tutorial_mouse_entered():
 	AudioManager.button_hover.play()

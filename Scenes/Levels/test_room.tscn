@@ -1680,6 +1680,8 @@ physics_interpolation_mode = 1
 position = Vector2(266.667, 111)
 offset = Vector2(30, -30)
 zoom = Vector2(0.6, 0.6)
+limit_left = 0
+limit_top = -60
 script = ExtResource("6_sreyd")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dbk0bpa37b38g"
+path="res://.godot/imported/gravegrinder.ase-c2fd34ad86f64bc685f46172eabcc4e6.res"
+
+[deps]
+
+source_file="res://UI/menu_bg/gravegrinder.ase"
+dest_files=["res://.godot/imported/gravegrinder.ase-c2fd34ad86f64bc685f46172eabcc4e6.res"]
+
+[params]
+

@@ -1,8 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://brp76xq3dewbq"]
+[gd_scene load_steps=8 format=3 uid="uid://brp76xq3dewbq"]
 
 [ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="1_chqnp"]
 [ext_resource type="Script" path="res://Scenes/Menus/settings.gd" id="1_tbvlh"]
+[ext_resource type="Texture2D" uid="uid://br6yjjqcc3wac" path="res://UI/menu_bg/muro.png" id="2_8iu73"]
+[ext_resource type="Shader" path="res://Scenes/Menus/main_menu_vignette.gdshader" id="3_b41p8"]
 [ext_resource type="PackedScene" uid="uid://b28mq268uedi5" path="res://UI/input_settings/input_settings.tscn" id="3_gmfib"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2i6m0"]
+shader = ExtResource("3_b41p8")
+shader_parameter/outerRadius = 2.0
+shader_parameter/MainAlpha = 0.5
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_0ye3n"]
 
@@ -14,6 +21,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tbvlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(1.11111, 1.11111)
+texture = ExtResource("2_8iu73")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2i6m0")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.501961)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

@@ -1,9 +1,150 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcif2oega6tu8"]
+[gd_scene load_steps=25 format=3 uid="uid://bcif2oega6tu8"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_ytn0b"]
 [ext_resource type="Texture2D" uid="uid://d2gj01dounnvp" path="res://UI/menu_bg/gravegrinder.png" id="2_gtkg8"]
 [ext_resource type="FontFile" uid="uid://chm6fioitd66u" path="res://Fonts/fibberish.ttf" id="2_mef47"]
 [ext_resource type="Texture2D" uid="uid://br6yjjqcc3wac" path="res://UI/menu_bg/muro.png" id="3_t2cxf"]
+[ext_resource type="Texture2D" uid="uid://bwprpysbg6lpo" path="res://UI/icons/setamenu.png" id="5_8wups"]
+[ext_resource type="Shader" path="res://Scenes/Menus/main_menu_vignette.gdshader" id="6_1u6of"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qvaq"]
+shader = ExtResource("6_1u6of")
+shader_parameter/outerRadius = 2.0
+shader_parameter/MainAlpha = 0.5
+
+[sub_resource type="Animation" id="Animation_em4xx"]
+resource_name = "title"
+length = 1.4
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-80, 9), Vector2(45, 9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 16.4539),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(0.8, 0.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.714286, 0.857143, 1, 1.14286, 1.28571),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_xay78"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8, 0.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eu21o"]
+_data = {
+"RESET": SubResource("Animation_xay78"),
+"title": SubResource("Animation_em4xx")
+}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkl45"]
 
@@ -45,12 +186,14 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wi707")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ax3f"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osrfd"]
+texture = ExtResource("5_8wups")
+expand_margin_left = 18.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ocn4"]
 bg_color = Color(0.628935, 0.75411, 0.729109, 1)
@@ -66,12 +209,19 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aankl"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ign5m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yposo"]
+texture = ExtResource("5_8wups")
+expand_margin_left = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3a23k"]
+texture = ExtResource("5_8wups")
+expand_margin_left = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6v84"]
+texture = ExtResource("5_8wups")
+expand_margin_left = 12.0
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -89,7 +239,25 @@ scale = Vector2(1.11111, 1.11111)
 texture = ExtResource("3_t2cxf")
 centered = false
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0qvaq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.501961)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eu21o")
+}
+autoplay = "title"
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -128,68 +296,77 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -135.0
-offset_top = -28.0
-offset_right = 135.0
-offset_bottom = -8.0
+offset_left = -112.0
+offset_top = -33.0
+offset_right = 112.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
+alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+focus_next = NodePath("../Tutorial")
+focus_previous = NodePath("../Quit")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/focus = SubResource("StyleBoxTexture_osrfd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Start Game"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Start")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yposo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Tutorial"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Tutorial")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/focus = SubResource("StyleBoxTexture_3a23k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_focus_color = Color(0, 0.54902, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../Options")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7ax3f")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c6v84")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_aankl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Quit"
 
 [connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]

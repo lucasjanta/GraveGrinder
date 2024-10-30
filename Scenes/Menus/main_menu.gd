@@ -1,11 +1,11 @@
 extends Control
 
-@onready var label = $Label
+@onready var startbutton = $VBoxContainer/Start
 
 func _ready():
 	if !AudioManager.main_menu.playing:
 		AudioManager.main_menu.play()
-
+	startbutton.grab_focus()
 func _process(delta):
 	pass
 	#if get_viewport().get_mouse_position().x > 160:

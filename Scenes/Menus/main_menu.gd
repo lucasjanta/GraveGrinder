@@ -3,9 +3,14 @@ extends Control
 @onready var startbutton = $VBoxContainer/Start
 
 func _ready():
+	var audio_settings = ConfigFileHandler.load_audio_settings()
+	AudioServer.set_bus_volume_db(0, linear_to_db(audio_settings.master_volume * 100))
+	AudioServer.set_bus_volume_db(1, linear_to_db(audio_settings.music_volume * 100))
+	AudioServer.set_bus_volume_db(2, linear_to_db(audio_settings.sfx_volume * 100))
 	if !AudioManager.main_menu.playing:
 		AudioManager.main_menu.play()
 	startbutton.grab_focus()
+	
 func _process(delta):
 	pass
 	#if get_viewport().get_mouse_position().x > 160:

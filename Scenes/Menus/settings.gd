@@ -11,12 +11,8 @@ extends Control
 @onready var sfx_slider = $"AudioContainer/Sound Effects/SFX_slider"
 
 func _ready():
-	#SETA OS SLIDERS DE SOM
 	#set_sliders_values()
-	
-	#mudar execução das settings pra rodar as configurações salvas desde
-	#o inicio do jogo, do jeito que está agora ele só muda o audio
-	#depois de entrar no menu de configurações
+	#SETA OS SLIDERS DE SOM
 	var audio_settings = ConfigFileHandler.load_audio_settings()
 	master_slider.value = min(audio_settings.master_volume, 1.0) * 100
 	music_slider.value = min(audio_settings.music_volume, 1.0) * 100
@@ -83,10 +79,10 @@ func _on_return_mouse_entered():
 
 #AUDIO CONFIGS ⬇
 
-func set_sliders_values() -> void:
-	master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
-	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
-	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+#func set_sliders_values() -> void:
+	#master_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
+	#music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
+	#sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
 
 func _on_master_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))

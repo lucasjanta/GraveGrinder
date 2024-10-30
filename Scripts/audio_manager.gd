@@ -1,9 +1,11 @@
 extends Node
 
-@onready var main_menu = $MainMenu
+#WIN/LOSE SOUNDS
 @onready var youwin = $youwin
 @onready var youlose = $youlose
 
+#MUSIC
+@onready var main_menu = $MainMenu
 #LV1 TRACKS
 @onready var l1_track1 = $Level1Track1
 @onready var l1_track2 = $Level1Track2
@@ -14,6 +16,8 @@ extends Node
 @onready var button_hover = $UI_sounds/button_hover
 @onready var button_click = $UI_sounds/button_click
 @onready var points = $UI_sounds/points
+@onready var title = $UI_sounds/title
+
 
 
 var selected_track : AudioStreamPlayer

@@ -6,8 +6,8 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body is Player:
-		if body.velocity.x > 100:
-			body.velocity.x -= 100
+		if body.velocity.x > 150:
+			body.velocity.x -= 150
 		else:
 			body.velocity.x = 0
 		UI.tombstones_destroyed -= 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bcif2oega6tu8"]
+[gd_scene load_steps=31 format=3 uid="uid://bcif2oega6tu8"]
 
 [ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_ytn0b"]
 [ext_resource type="Texture2D" uid="uid://d2gj01dounnvp" path="res://UI/menu_bg/gravegrinder.png" id="2_gtkg8"]
@@ -11,6 +11,9 @@
 shader = ExtResource("6_1u6of")
 shader_parameter/outerRadius = 2.0
 shader_parameter/MainAlpha = 0.5
+shader_parameter/red = 0.0
+shader_parameter/green = null
+shader_parameter/blue = null
 
 [sub_resource type="Animation" id="Animation_xay78"]
 length = 0.001
@@ -78,7 +81,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_em4xx"]
 resource_name = "title"
 length = 1.4
-step = 0.15
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -139,6 +142,20 @@ tracks/4/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_title_sound"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eu21o"]
 _data = {
@@ -193,21 +210,11 @@ animations = [{
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osrfd"]
 texture = ExtResource("5_8wups")
-expand_margin_left = 18.0
+expand_margin_left = 12.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ocn4"]
-bg_color = Color(0.628935, 0.75411, 0.729109, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cuyme"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k7vv"]
-bg_color = Color(0.408262, 0.536548, 0.513466, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2j8h3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ign5m"]
 
@@ -215,13 +222,25 @@ corner_radius_bottom_left = 10
 texture = ExtResource("5_8wups")
 expand_margin_left = 12.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rf5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g2uq4"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3a23k"]
 texture = ExtResource("5_8wups")
 expand_margin_left = 12.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je2vu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5k8q"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6v84"]
 texture = ExtResource("5_8wups")
 expand_margin_left = 12.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctb31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gaps0"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -306,20 +325,21 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(50, 20)
+custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
 size_flags_vertical = 3
 focus_next = NodePath("../Tutorial")
 focus_previous = NodePath("../Quit")
 mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 0.27451, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxTexture_osrfd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cuyme")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2j8h3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
-text = "Start Game"
+text = "Start"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(40, 20)
@@ -328,12 +348,13 @@ size_flags_vertical = 3
 focus_next = NodePath("../Options")
 focus_previous = NodePath("../Start")
 mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 0.27451, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxTexture_yposo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1rf5u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g2uq4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Tutorial"
 
@@ -344,12 +365,13 @@ size_flags_vertical = 3
 focus_next = NodePath("../Quit")
 focus_previous = NodePath("../Tutorial")
 mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 0.27451, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxTexture_3a23k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_je2vu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5k8q")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Options"
 
@@ -360,20 +382,25 @@ size_flags_vertical = 3
 focus_next = NodePath("../Start")
 focus_previous = NodePath("../Options")
 mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(1, 1, 0.27451, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_mef47")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/focus = SubResource("StyleBoxTexture_c6v84")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5ocn4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5k7vv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ctb31")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gaps0")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ign5m")
 text = "Quit"
 
+[connection signal="focus_entered" from="VBoxContainer/Start" to="." method="_on_start_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_startgame_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Options" to="." method="_on_options_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_settings_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Quit" to="." method="_on_quit_focus_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,77 +1,66 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5wt0ddfvqfnb"]
+[gd_scene load_steps=10 format=3 uid="uid://c5wt0ddfvqfnb"]
 
-[ext_resource type="Texture2D" uid="uid://cj6mv1c5mk2vp" path="res://Props/tumbas.png" id="1_hk0uq"]
 [ext_resource type="Script" path="res://Props/tombstone/tombstone.gd" id="1_mnlhm"]
+[ext_resource type="Texture2D" uid="uid://0mtpf2sd1gt7" path="res://Props/tombstone/tumbalacatumba.png" id="2_wosbj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k5a4j"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka2pl"]
+atlas = ExtResource("2_wosbj")
+region = Rect2(94, 0, 94, 114)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_javnn"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_86tr1"]
+atlas = ExtResource("2_wosbj")
+region = Rect2(188, 0, 94, 114)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6ppf"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfasg"]
+atlas = ExtResource("2_wosbj")
+region = Rect2(0, 114, 94, 114)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cehxn"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1wg6"]
+atlas = ExtResource("2_wosbj")
+region = Rect2(94, 114, 94, 114)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qy5lb"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(64, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_folte"]
+atlas = ExtResource("2_wosbj")
+region = Rect2(0, 0, 94, 114)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_13dep"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_38l10"]
-atlas = ExtResource("1_hk0uq")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qwt7h"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gaovs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k5a4j")
+"texture": SubResource("AtlasTexture_ka2pl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_javnn")
+"texture": SubResource("AtlasTexture_86tr1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s6ppf")
+"texture": SubResource("AtlasTexture_dfasg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cehxn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qy5lb")
+"texture": SubResource("AtlasTexture_q1wg6")
 }],
 "loop": false,
 "name": &"break",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1wg6")
+}],
+"loop": false,
+"name": &"broke",
 "speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_13dep")
+"texture": SubResource("AtlasTexture_folte")
 }],
-"loop": true,
-"name": &"broken",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_38l10")
-}],
-"loop": true,
+"loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68chq"]
-size = Vector2(26, 27)
+size = Vector2(26, 39)
 
 [node name="tombstone" type="Area2D"]
 collision_layer = 257
@@ -79,12 +68,29 @@ collision_mask = 2
 script = ExtResource("1_mnlhm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_qwt7h")
-animation = &"idle"
+texture_filter = 1
+position = Vector2(6, -7)
+sprite_frames = SubResource("SpriteFrames_gaovs")
+animation = &"break"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Props/tombstone",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://Props/tombstone/tumbalacatumba.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "73fe73416495d4fadfceb60c87973d14"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_68chq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

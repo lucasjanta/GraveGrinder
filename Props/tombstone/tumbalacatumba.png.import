@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj6mv1c5mk2vp"
-path="res://.godot/imported/tumbas.png-2e51e1e1b3a33b1f6d3e056ba5f51a06.ctex"
+uid="uid://0mtpf2sd1gt7"
+path="res://.godot/imported/tumbalacatumba.png-8c86caed30794ad303a0879763cf8c12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Props/tumbas.png"
-dest_files=["res://.godot/imported/tumbas.png-2e51e1e1b3a33b1f6d3e056ba5f51a06.ctex"]
+source_file="res://Props/tombstone/tumbalacatumba.png"
+dest_files=["res://.godot/imported/tumbalacatumba.png-8c86caed30794ad303a0879763cf8c12.ctex"]
 
 [params]
 

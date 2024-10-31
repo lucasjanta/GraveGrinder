@@ -1,14 +1,14 @@
 extends Control
 
 @onready var video_container = $VideoContainer
-@onready var audio_container = $AudioContainer
+@onready var audio_container = $PanelContainer
 @onready var input_settings_container = $InputSettings
 @onready var misc_container = $MiscContainer
 
 #Sound slider vars
-@onready var master_slider = $AudioContainer/Master/master_slider
-@onready var music_slider = $AudioContainer/Music/music_slider
-@onready var sfx_slider = $"AudioContainer/Sound Effects/SFX_slider"
+@onready var master_slider = $PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Master/master_slider
+@onready var music_slider = $PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Music/music_slider
+@onready var sfx_slider = $"PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Sound Effects/SFX_slider"
 
 func _ready():
 	#set_sliders_values()

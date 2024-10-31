@@ -10,6 +10,9 @@
 shader = ExtResource("3_b41p8")
 shader_parameter/outerRadius = 2.0
 shader_parameter/MainAlpha = 0.5
+shader_parameter/red = null
+shader_parameter/green = null
+shader_parameter/blue = null
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_0ye3n"]
 
@@ -131,55 +134,78 @@ popup/item_2/text = "Fullscreen"
 popup/item_2/checkable = 1
 popup/item_2/id = 2
 
-[node name="AudioContainer" type="VBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 90.0
-offset_right = 320.0
-offset_bottom = 180.0
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -71.0
+offset_right = 149.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 
-[node name="Master" type="HBoxContainer" parent="AudioContainer"]
+[node name="AudioContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="AudioContainer/Master"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Master"]
 layout_mode = 2
 text = "Master"
 
-[node name="master_slider" type="HSlider" parent="AudioContainer/Master"]
+[node name="master_slider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Master"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Music" type="HBoxContainer" parent="AudioContainer"]
+[node name="Music" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="AudioContainer/Music"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Music"]
 layout_mode = 2
 text = "Music"
 
-[node name="music_slider" type="HSlider" parent="AudioContainer/Music"]
+[node name="music_slider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Music"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="Sound Effects" type="HBoxContainer" parent="AudioContainer"]
+[node name="Sound Effects" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="Label" type="Label" parent="AudioContainer/Sound Effects"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Sound Effects"]
 layout_mode = 2
 text = "Sound FX"
 
-[node name="SFX_slider" type="HSlider" parent="AudioContainer/Sound Effects"]
+[node name="SFX_slider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Sound Effects"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 max_value = 1.0
@@ -209,10 +235,10 @@ text = "Reset Highscore"
 [connection signal="pressed" from="VBoxContainer/Misc" to="." method="_on_misc_pressed"]
 [connection signal="mouse_entered" from="VBoxContainer/Return" to="." method="_on_return_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
-[connection signal="drag_ended" from="AudioContainer/Master/master_slider" to="." method="_on_master_slider_drag_ended"]
-[connection signal="value_changed" from="AudioContainer/Master/master_slider" to="." method="_on_master_slider_value_changed"]
-[connection signal="drag_ended" from="AudioContainer/Music/music_slider" to="." method="_on_music_slider_drag_ended"]
-[connection signal="value_changed" from="AudioContainer/Music/music_slider" to="." method="_on_music_slider_value_changed"]
-[connection signal="drag_ended" from="AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_drag_ended"]
-[connection signal="value_changed" from="AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Master/master_slider" to="." method="_on_master_slider_drag_ended"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Master/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Music/music_slider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Music/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/AudioContainer/Sound Effects/SFX_slider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="MiscContainer/ResetScore" to="." method="_on_reset_score_pressed"]

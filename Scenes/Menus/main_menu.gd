@@ -9,6 +9,9 @@ extends Control
 var title_arrived : bool
 
 func _ready():
+	change_bg_color(0.3,0.5,0.7)
+	#code to change shader parameter
+	#color_rect.material.set_shader_parameter("red", 0.5)
 	AudioManager.main_menu.stop()
 	title_arrived = false
 	var audio_settings = ConfigFileHandler.load_audio_settings()
@@ -74,3 +77,8 @@ func _on_quit_focus_entered():
 func play_title_sound():
 	AudioManager.title.play()
 	title_arrived = true
+
+func change_bg_color(r : float, g : float, b : float):
+	color_rect.material.set_shader_parameter("red", r)
+	color_rect.material.set_shader_parameter("green", g)
+	color_rect.material.set_shader_parameter("blue", b)

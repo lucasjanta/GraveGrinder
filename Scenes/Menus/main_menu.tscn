@@ -12,8 +12,8 @@ shader = ExtResource("6_1u6of")
 shader_parameter/outerRadius = 2.0
 shader_parameter/MainAlpha = 0.5
 shader_parameter/red = 0.0
-shader_parameter/green = null
-shader_parameter/blue = null
+shader_parameter/green = 0.0
+shader_parameter/blue = 0.0
 
 [sub_resource type="Animation" id="Animation_xay78"]
 length = 0.001

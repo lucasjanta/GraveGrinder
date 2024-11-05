@@ -14,11 +14,16 @@ func _ready():
 	#color_rect.material.set_shader_parameter("red", 0.5)
 	AudioManager.main_menu.stop()
 	title_arrived = false
+	#change audio settings to saved settings from the start
 	var audio_settings = ConfigFileHandler.load_audio_settings()
 	AudioServer.set_bus_volume_db(0, linear_to_db(audio_settings.master_volume * 100))
 	AudioServer.set_bus_volume_db(1, linear_to_db(audio_settings.music_volume * 100))
 	AudioServer.set_bus_volume_db(2, linear_to_db(audio_settings.sfx_volume * 100))
-	
+	#change binding settings to saved settings from the start
+	var keybindings = ConfigFileHandler.load_keybindings()
+	for action in keybindings.keys():
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, keybindings[action])
 	startbutton.grab_focus()
 	
 func _process(delta):

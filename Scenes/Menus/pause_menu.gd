@@ -1,10 +1,12 @@
 extends Control
 
 @onready var level_node = $"../.."
+@onready var start_animation = $"../../StartAnimation"
+
 var paused : bool = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and start_animation.ready_to_go:
 		pause_or_unpause()
 
 func pause_or_unpause() -> void:

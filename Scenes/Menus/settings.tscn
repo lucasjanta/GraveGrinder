@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Menus/settings.gd" id="1_tbvlh"]
 [ext_resource type="Texture2D" uid="uid://br6yjjqcc3wac" path="res://UI/menu_bg/muro.png" id="2_8iu73"]
 [ext_resource type="Shader" path="res://Scenes/Menus/main_menu_vignette.gdshader" id="3_b41p8"]
-[ext_resource type="PackedScene" uid="uid://b28mq268uedi5" path="res://UI/input_settings/input_settings.tscn" id="3_gmfib"]
+[ext_resource type="PackedScene" uid="uid://b28mq268uedi5" path="res://Scenes/Menus/input_settings/input_settings.tscn" id="3_gmfib"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2i6m0"]
 shader = ExtResource("3_b41p8")

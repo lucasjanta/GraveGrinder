@@ -1730,9 +1730,9 @@ debug_color = Color(0.933333, 0, 0.227451, 0.419608)
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="vel_num" type="Label" parent="HUD"]
-offset_left = 78.0
+offset_left = 289.0
 offset_top = 143.0
-offset_right = 118.0
+offset_right = 329.0
 offset_bottom = 166.0
 scale = Vector2(0.75, 0.75)
 text = "0"
@@ -1740,9 +1740,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Velocity" type="TextureProgressBar" parent="HUD"]
-offset_left = 5.0
+offset_left = 216.0
 offset_top = 143.0
-offset_right = 105.0
+offset_right = 316.0
 offset_bottom = 169.0
 scale = Vector2(0.75, 0.75)
 max_value = 325.0
@@ -1752,9 +1752,9 @@ texture_progress = ExtResource("10_u0r14")
 tint_under = Color(0.187176, 0.187176, 0.187176, 1)
 
 [node name="Stamina" type="TextureProgressBar" parent="HUD"]
-offset_left = 5.0
+offset_left = 216.0
 offset_top = 160.0
-offset_right = 105.0
+offset_right = 316.0
 offset_bottom = 200.0
 scale = Vector2(0.75, 0.75)
 value = 100.0

@@ -103,36 +103,10 @@ offset_left = 35.0
 offset_right = 35.0
 
 [node name="VideoContainer" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 90.0
 offset_right = 320.0
 offset_bottom = 180.0
-
-[node name="Resolution" type="MenuButton" parent="VideoContainer"]
-layout_mode = 2
-text = "Resolution"
-item_count = 2
-popup/item_0/text = "1920x1080"
-popup/item_0/checkable = 1
-popup/item_0/checked = true
-popup/item_1/text = "1080x720"
-popup/item_1/checkable = 1
-popup/item_1/id = 1
-
-[node name="Screen" type="MenuButton" parent="VideoContainer"]
-layout_mode = 2
-text = "Screen Mode"
-item_count = 3
-popup/item_0/text = "Windowed"
-popup/item_0/checkable = 1
-popup/item_0/checked = true
-popup/item_1/text = "Borderless Window"
-popup/item_1/checkable = 1
-popup/item_1/id = 1
-popup/item_2/text = "Fullscreen"
-popup/item_2/checkable = 1
-popup/item_2/id = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false

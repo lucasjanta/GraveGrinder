@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c4h3ij2waswl2"
+path="res://.godot/imported/tileset grave grinder.aseprite-b73c5ac215f77bfcfd477df9d6d0c220.res"
+
+[deps]
+
+source_file="res://Tilesets/tileset grave grinder.aseprite"
+dest_files=["res://.godot/imported/tileset grave grinder.aseprite-b73c5ac215f77bfcfd477df9d6d0c220.res"]
+
+[params]
+
